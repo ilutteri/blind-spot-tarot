@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+  }
+
+img {
+  height: 300px;
+}
+
+h1, h2 {
+  color: red;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+}
+  
+  .spread-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .card {
+    
+    width: auto;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .card-0, .card-1, .card-2, .card-3 {
+    background-color: black;
+    border-color: red;
+    color: red
+  }
+
+  

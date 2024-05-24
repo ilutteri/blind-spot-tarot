@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarot API Consumption</title>
+</head>
+<body>
+  <div id="tarotCards"></div>
+
+  <script>
+    // Function to fetch and display tarot cards
+    async function fetchTarotCards() {
+      try {
+        // Fetch data from the API
+        const response = await fetch('https://tarotapi.dev/api/v1/cards');
+        
+        // Check if the request was successful
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        
+        // Parse the JSON response
+        const data = await response.json();
+        
+        // Display the data
+        const tarotCardsDiv = document.getElementById('tarotCards');
+        data.forEach(card => {
+          tarotCardsDiv.innerHTML += `
+            <div>
+              <h2>${card.name_short}</h2>
+              <p><strong>Type:</strong> ${card.type}</p>
+              <p><strong>Value:</strong> ${card.value}</p>
+              <p><strong>Meaning (Upright):</strong> ${card.meaning_up}</p>
+              <p><strong>Meaning (Reversed):</strong> ${card.meaning_rev}</p>
+              <p><strong>Description:</strong> ${card.desc}</p>
+            </div>
+          `;
+        });
+      } catch (error) {
+        console.error('Error fetching tarot cards:', error.message);
+      }
+    }
+    
+    // Call the fetchTarotCards function when the page loads
+    fetchTarotCards();
+  </script>
+</body>
+</html>
