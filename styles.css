@@ -1,44 +1,139 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: black;
-  }
-
-img {
-  height: 300px;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: bold;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: red;
 }
+
+#tetramagnaton {
+  height: 80px;
+  color: red;
+}
+
+
+h2 {
+  font-style: italic;
+}
+
 
 .titulo {
   display: flex;
   justify-content: center;
+  text-align: center;
 }
-  
-  .spread-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: center;
-    margin: 20px;
-  }
-  
-  .card {
-    
-    width: auto;
-    height: auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    font-size: 18px;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .card-0, .card-1, .card-2, .card-3 {
-    background-color: black;
-    border-color: red;
-    color: red
+
+.spread-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  margin: 20px;
+  column-gap: 5rem;
+  row-gap: 2rem;
+}
+
+.card {
+
+  width: auto;
+  height: 360px;
+  width: 220px;
+  padding: 3px;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: 200;
+  text-align: center;
+  cursor: pointer;
+  background: linear-gradient(0deg, rgb(71, 65, 65), black, black );
+  color: white;
+  border-radius: 3%;
+}
+
+.flip {
+  transform: rotate(180deg);
+}
+
+.spread-explanation-container {
+  color: white;
+  display: grid;
+  width: auto;
+  padding: 10%;
+  justify-content: center;
+  text-align: justify;
+  font-weight: lighter;
+  margin: 15px
+}
+
+.interpretation-container{
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+
+.card-data {
+  margin-top: 3rem;
+  padding: 3%;
+  color:white;
+  display: flex;
+  box-shadow: 2px 4px 8px white;
+  transition: box-shadow 0.3s ease;
+  width: 75%;
+}
+
+.card-text {
+  margin-left: 40px;
+  font-size: small;
+  text-align: justify;
+  font-weight: 200;
+}
+
+
+
+img {
+  height: 300px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  animation: fadeIn 3s ease;
+  border-radius: 10px;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(20px);
   }
 
-  
+  10% {
+    opacity: 1;
+    filter: brightness(2) blur(10px)
+  }
+}
+
+
+.clickableImage {
+  cursor: pointer;
+  width: 200px;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  margin: 20px 0;
+}
+.clickableImage:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.description {
+  margin-top: 1000px; /* Just for demonstration, to create some space */
+}
+
+button{
+  color:white;
+  background-color: black;
+  font-style: italic;
+  cursor:pointer
+}

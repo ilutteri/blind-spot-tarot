@@ -1,58 +1,5 @@
-// // Define the Crowley Tarot cards and their names
-// const cards = [
-//     { name: "The Fool", value: "0" },
-//     { name: "The Magician", value: "1" },
-//     { name: "The High Priestess", value: "2" },
-//     // Add more cards to the array
-//   ];
-  
-//   // Shuffle the card array
-//   cards.sort(() => Math.random() - 0.5);
-  
-//   // Assign random card names to each span element
-// const cargarCartas = () => {
-//     let mazo = 16;
-//     let tirada = [];
 
-//     for(let i = 0; i < tirada.length; i++ ){
-
-//         document.getElementById(`card-name-${i}`).textContent = cards[i].name;
-
-//         }
-
-// }
-
-//   document.getElementById("card-name-0").textContent = cards[0].name;
-//   document.getElementById("card-name-1").textContent = cards[1].name;
-//   document.getElementById("card-name-2").textContent = cards[2].name;
-//   document.getElementById("card-name-0").textContent = cards[0].name;
-//   document.getElementById("card-name-1").textContent = cards[1].name;
-//   document.getElementById("card-name-2").textContent = cards[2].name;
-  
-//   // Add more code to populate the remaining cards in the Celtic Cross spread
-
-//   const constPruebaFetch = () => {
-
-
-//   fetch("https://tarotapi.dev/api/v1/cards/random?n=10")
-//   .then(function (response) {
-//     console.log(response.json());
-//     return response.json();
-//   })
-//   .then(function (response) {
-//     console.log(response);
-//   })
-//   .catch(function (error) {
-//     // handle what went wrong
-//   });
-
-// }
-
-// constPruebaFetch();
-
-
-
-const  dataCartas = () => {
+const  getDataCartas = () => {
         fetch('https://tarotapi.dev/api/v1/cards')
         .then(response => response.json())
         .then(cardsData => {
@@ -76,9 +23,15 @@ const asignarCartas = (cartas = []) => {
     let randomCheck = [];
         
     for(let i = 0; i < 4; i++ ){
+
         const randomIndex = getRandomNumber(randomCheck);
-        document.getElementById(`card-name-${i}`).textContent = cartas[randomIndex].name;
-        document.getElementById(`img-${i}`).setAttribute('src', `https://tarotsmith.com/images/crowley-thoth/${formatImgIndex(cartas[randomIndex].value_int)}.jpg`);
+        let src = `https://tarotsmith.com/images/crowley-thoth/${formatImgIndex(cartas[randomIndex].value_int)}.jpg`;
+
+        // document.getElementById(`card-name-${i}`).textContent = cartas[randomIndex].name;
+       // document.getElementById(`img-${i}`).setAttribute('src', src);
+        setSrcByClass(`img-${i}`, src );
+        setTextByClass(`card-name-${i}`, cartas[randomIndex].name );
+        setTextByClass(`card-text-${i}`, cartas[randomIndex].desc )
         randomCheck.push(randomIndex);
     }
 }
@@ -87,7 +40,6 @@ const formatImgIndex = (numero) => {
     
     if(numero <= 9)
         {
-            console.log("0" + numero);
             return "0" + numero;
         }
     return numero;
@@ -103,4 +55,57 @@ const getRandomNumber = (pastRandoms = []) => {
 
 }
 
-dataCartas()
+const setTextByClass = (className, text) => {
+    let elems = document.querySelectorAll("." + className);
+  for( let i = 0; i < elems.length; i++ ){
+    elems[i].textContent = text; // src must be a full adress
+   // or, if you want to set a relative adress...
+   // elems[i].setAttribute('src', src);
+  }
+
+}
+
+
+const setSrcByClass = (className, src) => {
+ 
+  let elems = document.querySelectorAll("." + className);
+  for( let i = 0; i < elems.length; i++ ){
+    elems[i].src = src; // src must be a full adress
+   // or, if you want to set a relative adress...
+   // elems[i].setAttribute('src', src);
+  }
+}
+
+const flipCardsRandomly = () =>{
+
+    document.querySelectorAll('.random-flip').forEach(img => {
+        if (Math.random() > 0.5) {
+            console.log("entro")
+            img.classList.add('flip');
+        }
+    });
+};
+
+
+const clickImgEvent = () => {
+
+    document.querySelectorAll('.clickableImage').forEach(function(image) {
+                image.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+
+}
+
+const scrollToSpread = () => {
+    document.getElementById('spread').scrollIntoView({ behavior: 'smooth' });
+}
+
+
+
+getDataCartas()
+clickImgEvent()
+// flipCardsRandomly()
+
