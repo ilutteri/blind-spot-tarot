@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowley Tarot</title>
+    <link rel="stylesheet" href="../styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="list">
+        <ol>
+            <ul>
+                <li><a href="../index.html">Back To Spreads</a></li>
+            </ul>
+        </ol>
+    </div>
+
+    <div class="titulo">
+        <div>
+            <h1>CROWLEY</h1>
+            <h1>Tarot</h1>
+        </div>
+    </div>
+
+    <div class="titulo">
+        <div>
+            <h2>Three Card Spread</h2>
+        </div>
+    </div>
+
+
+    <div class="spread-container" id="spread" style="display: flex;">
+
+        <div>
+            <div class="card">
+                <div class="card-name-0"></div>
+                <img class="img-0 random-flip clickableImage" data-target="description-0">
+            </div>
+        </div>
+
+        <div>
+            <div class="card">
+                <div class="card-name-1"></div>
+                <img class="img-1 random-flip clickableImage" data-target="description-1">
+            </div>
+        </div>
+
+
+        <div>
+            <div class="card">
+                <div class="card-name-2"></div>
+                <img class="img-2 random-flip clickableImage" data-target="description-2">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="spread-explanation-container">
+        <div>
+            <p>
+                This simplistic chronological spread can be used to shed light on the influences that are now behind
+                you,
+                current influences, and what is approaching in the near future. Not much explanation is necessary on
+                this one.
+            </p>
+        </div>
+    </div>
+
+    <div class="interpretation-container">
+
+        <div class="card-data" id="description-0">
+
+            <img class="img-0">
+
+            <div class="card-text">
+                <h3>Your Past</h3>
+                <h4 class="card-name-0"></h4>
+                <hr>
+                <div class="card-text-0"></div>
+                <br>
+                <button class="back-to-top" onclick="scrollToSpread()">Back to Top</button>
+            </div>
+        </div>
+
+        <div class="card-data" id="description-1">
+
+            <img class="img-1">
+
+            <div class="card-text">
+                <h3>Your Present</h3>
+                <h4 class="card-name-1"></h4>
+                <hr>
+                <div class="card-text-2"></div>
+                <br>
+                <button class="back-to-top" onclick="scrollToSpread()">Back to Top</button>
+            </div>
+        </div>
+
+
+        <div class="card-data" id="description-2">
+
+            <img class="img-2">
+
+            <div class="card-text">
+                <h3>Your Future</h3>
+                <h4 class="card-name-1"></h4>
+                <hr>
+                <div class="card-text-2"></div>
+                <br>
+                <button class="back-to-top" onclick="scrollToSpread()">Back to Top</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

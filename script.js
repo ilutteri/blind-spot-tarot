@@ -109,3 +109,4 @@ getDataCartas()
 clickImgEvent()
 // flipCardsRandomly()
 
+

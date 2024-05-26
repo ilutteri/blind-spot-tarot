@@ -12,8 +12,9 @@ h2 {
 }
 
 #tetramagnaton {
-  height: 80px;
+  height: 475px;
   color: red;
+  margin-bottom: 0.5rem;
 }
 
 
@@ -26,6 +27,11 @@ h2 {
   display: flex;
   justify-content: center;
   text-align: center;
+  margin:20px
+}
+
+#tetramagnaton {
+  border: 0px
 }
 
 .spread-container {
@@ -48,7 +54,6 @@ h2 {
   font-weight: 200;
   text-align: center;
   cursor: pointer;
-  background: linear-gradient(0deg, rgb(71, 65, 65), black, black );
   color: white;
   border-radius: 3%;
 }
@@ -78,6 +83,7 @@ h2 {
 
 .card-data {
   margin-top: 3rem;
+  margin-bottom: 3rem;
   padding: 3%;
   color:white;
   display: flex;
@@ -93,14 +99,13 @@ h2 {
   font-weight: 200;
 }
 
-
-
 img {
   height: 300px;
   margin-top: 20px;
   margin-bottom: 20px;
   animation: fadeIn 3s ease;
   border-radius: 10px;
+  border: solid white 10px;
 }
 @keyframes fadeIn {
   0% {
@@ -114,7 +119,6 @@ img {
   }
 }
 
-
 .clickableImage {
   cursor: pointer;
   width: 200px;
@@ -123,6 +127,7 @@ img {
   transition: box-shadow 0.3s ease;
   margin: 20px 0;
 }
+
 .clickableImage:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -136,4 +141,33 @@ button{
   background-color: black;
   font-style: italic;
   cursor:pointer
+}
+
+.menu-container {
+
+  color: red;
+  display: inline-block;
+  padding-left: 50px;
+  
+}
+
+#back-card{
+  margin: auto;
+  border: solid white 10px;
+  animation: none;
+}
+
+ul {
+  margin-bottom: 30px;
+}
+
+a {
+  color: white;
+  cursor: pointer;
+  transition: color 0.5s;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
 }
